@@ -1,11 +1,11 @@
-About r-pkgfilecache
-====================
+About r-pkgfilecache-feedstock
+==============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-pkgfilecache-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/dfsp-spirit/pkgfilecache
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-pkgfilecache-feedstock/blob/main/LICENSE.txt)
 
 Summary: Manage optional data for your package. The data can be hosted anywhere, and you have
 to give a Uniform Resource Locator (URL) for each file. File integrity checks are

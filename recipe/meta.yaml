@@ -1,4 +1,4 @@
-{% set version = '0.1.4' %}
+{% set version = "0.1.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/pkgfilecache_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/pkgfilecache/pkgfilecache_{{ version }}.tar.gz
-  sha256: 577f7213f6ea8a81ace4145298e724b84cb6ca15173982a9335f72b23c2826bb
+  sha256: 6b453f71a8b29118d2898428b08d92966c2e34d47ffb91af339a1012ca9ff15b
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/

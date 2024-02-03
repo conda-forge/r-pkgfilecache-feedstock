@@ -26,17 +26,25 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-curl
     - r-downloader
     - r-rappdirs
   run:
     - r-base
+    - r-curl
     - r-downloader
     - r-rappdirs
 
 test:
+  requires:
+    - r-testthat >=2.1.0
+  source_files:
+    - tests/
   commands:
-    - $R -e "library('pkgfilecache')"           # [not win]
-    - "\"%R%\" -e \"library('pkgfilecache')\""  # [win]
+    - $R -e "library('pkgfilecache')"                                        # [not win]
+    - $R -e "testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)"  # [not win]
+    - "\"%R%\" -e \"library('pkgfilecache')\""                                        # [win]
+    - "\"%R%\" -e \"testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)\""  # [win]
 
 about:
   home: https://github.com/dfsp-spirit/pkgfilecache
@@ -48,7 +56,7 @@ about:
     of data currently allowed by the the Comprehensive R Archive Network (CRAN).
   license_family: MIT
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
     - LICENSE
 
 extra:
